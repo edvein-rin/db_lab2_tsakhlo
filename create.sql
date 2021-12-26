@@ -1,34 +1,34 @@
 -- Author
-CREATE TABLE IF NOT EXISTS public.author
+CREATE TABLE author
 (
-    id integer NOT NULL DEFAULT nextval('"Author_id_seq"'::regclass),
-    name character(50) COLLATE pg_catalog."default" NOT NULL,
+    id      integer         UNIQUE NOT NULL,
+    name    character(50)   NULL,
     CONSTRAINT "Author_pkey" PRIMARY KEY (id)
 )
 
 -- Ramen
-CREATE TABLE IF NOT EXISTS public.ramen
+CREATE TABLE ramen
 (
-    id integer NOT NULL DEFAULT nextval('"Ramen_id_seq"'::regclass),
-    name character(50) COLLATE pg_catalog."default" NOT NULL,
-    style character(50) COLLATE pg_catalog."default" NOT NULL,
+    id      integer         UNIQUE NOT NULL,
+    name    character(50)   NULL,
+    style   character(50)   NULL,
     CONSTRAINT "Ramen_pkey" PRIMARY KEY (id)
 )
 
 -- Review
-CREATE TABLE IF NOT EXISTS public.review
+CREATE TABLE review
 (
-    id integer NOT NULL DEFAULT nextval('review_id_seq'::regclass),
-    stars integer NOT NULL,
-    author_id integer NOT NULL,
-    ramen_id integer NOT NULL,
+    id          integer         UNIQUE NOT NULL,
+    stars       integer         NOT NULL,
+    author_id   integer         NOT NULL,
+    ramen_id    integer         NOT NULL,
     CONSTRAINT review_pkey PRIMARY KEY (id),
     CONSTRAINT author_id FOREIGN KEY (author_id)
-        REFERENCES public.author (id) MATCH SIMPLE
+        REFERENCES author (id) MATCH SIMPLE
         ON UPDATE NO ACTION
         ON DELETE NO ACTION,
     CONSTRAINT ramen_id FOREIGN KEY (ramen_id)
-        REFERENCES public.ramen (id) MATCH SIMPLE
+        REFERENCES ramen (id) MATCH SIMPLE
         ON UPDATE NO ACTION
         ON DELETE NO ACTION
 )
