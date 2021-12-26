@@ -6,11 +6,6 @@ CREATE TABLE IF NOT EXISTS public.author
     CONSTRAINT "Author_pkey" PRIMARY KEY (id)
 )
 
-TABLESPACE pg_default;
-
-ALTER TABLE public.author
-    OWNER to postgres;
-
 -- Ramen
 CREATE TABLE IF NOT EXISTS public.ramen
 (
@@ -19,11 +14,6 @@ CREATE TABLE IF NOT EXISTS public.ramen
     style character(50) COLLATE pg_catalog."default" NOT NULL,
     CONSTRAINT "Ramen_pkey" PRIMARY KEY (id)
 )
-
-TABLESPACE pg_default;
-
-ALTER TABLE public.ramen
-    OWNER to postgres;
 
 -- Review
 CREATE TABLE IF NOT EXISTS public.review
@@ -42,8 +32,3 @@ CREATE TABLE IF NOT EXISTS public.review
         ON UPDATE NO ACTION
         ON DELETE NO ACTION
 )
-
-TABLESPACE pg_default;
-
-ALTER TABLE public.review
-    OWNER to postgres;
