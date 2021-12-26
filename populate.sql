@@ -15,10 +15,10 @@ VALUES(2, 'Wei Lih', 'Cup');
 INSERT INTO review(id, stars, author_id, ramen_id)
 VALUES(0, 9, 0, 0);
 INSERT INTO review(id, stars, author_id, ramen_id)
-VALUES(0, 6, 0, 2);
+VALUES(1, 6, 0, 2);
 INSERT INTO review(id, stars, author_id, ramen_id)
-VALUES(0, 8, 1, 1);
+VALUES(2, 8, 1, 1);
 INSERT INTO review(id, stars, author_id, ramen_id)
-VALUES(0, 8, 2, 0);
+VALUES(3, 8, 2, 0);
 INSERT INTO review(id, stars, author_id, ramen_id)
-VALUES(0, 3, 2, 2);
+VALUES(4, 3, 2, 2);
